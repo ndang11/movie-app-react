@@ -1,15 +1,19 @@
- import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MovieCard from './components/MovieCard'
+import React from "react";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieProvider from "./context/MovieProvider";
+import Home from "./pages/Home";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-        <MovieCard />
+    <MovieProvider>
+      <BrowserRouter>
         <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="*" element={<NotFound />} /> */}
         </Routes>
-    </Router>
-  )
+      </BrowserRouter>
+    </MovieProvider>
+  );
 }
-
-export default App
