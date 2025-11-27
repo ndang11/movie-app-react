@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route } from "react-router-dom";
 import MovieProvider from "./context/MovieProvider";
 import MovieDetails from "./pages/MovieDetails";
 import Home from "./pages/Home";
+import "./index.css";
 
 export default function App() {
   return (
