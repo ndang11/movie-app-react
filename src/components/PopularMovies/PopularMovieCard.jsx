@@ -10,10 +10,14 @@ export default function PopularMovieCard({ movie, index}) {
   return (
     <div className={Styles.main}>
     <Link to={`/movie/${movie.id}`} className={Styles.popular1}>
-       <div className={Styles.index}>#{index + 1}</div>
-      <img src={image} alt={movie.title} />
+    <div className={Styles.number}>
+         <div className={Styles.index}>#{index + 1}</div>
+     <div className={Styles.posters}>
+       <img src={image} alt={movie.title} />
       <h3>{movie.title}</h3>
       <span>⭐ {movie.vote_average}</span>
+     </div>
+    </div>
     </Link>
     </div>
   );

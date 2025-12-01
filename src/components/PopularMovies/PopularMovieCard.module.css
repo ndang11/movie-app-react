@@ -17,7 +17,7 @@
   height: 360px;
   background: #111;
   border-radius: 16px;
-  overflow: hidden; /* 🔥 keeps content inside */
+  overflow: hidden;
   cursor: pointer;
   text-decoration: none;
   color: white;

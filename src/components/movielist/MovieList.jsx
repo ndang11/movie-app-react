@@ -7,7 +7,9 @@ export default function MovieList({ movies }) {
     <div className={Styles.list}>
       {movies?.map((m, index) => (
         <div key={m.id} className={Styles.movieItem}>
-          <div className={Styles.movieIndex}>{index + 1}</div>
+         <div className={Styles.index22}>
+           <div className={Styles.movieIndex}>{index + 1}</div>
+         </div>
           <MovieCard movie={m} index={index} />
         </div>
       ))}
