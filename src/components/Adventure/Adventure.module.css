@@ -1,0 +1,50 @@
+.page {
+  padding: 20px;
+  color: white;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.scrollContainer {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 160px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.index {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.poster {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}

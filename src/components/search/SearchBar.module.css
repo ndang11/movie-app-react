@@ -1,57 +1,99 @@
+
+.searchContainer {
+  width: 91%;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .searchBar {
   display: flex;
   align-items: center;
-  max-width: 600px;
-  justify-content: center;
-  margin: 20px;
+  gap: 10px;
+  background: #1c1c1c;
+  padding: 10px 14px;
+  border-radius: 40px;
+  border: 1px solid #333;
+  width: 100%;
+  max-width: 500px;
+  /* margin: auto; */
 }
-
 
 .searchBar input {
   flex: 1;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid white;
-  outline: none;
   background: transparent;
-  color: #31c91d;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
 }
 
-.searchBar img {
-  width: 24px;
-  margin-right: 10px;
-  filter: invert(1); /* makes icon white for dark backgrounds */
+.searchBtn {
+  background: #e50914;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.searchBtn:hover {
+  background: #b20710;
+}
+
+.searchResults {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .moviesGrid {
+  margin-top: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
+  /* grid-template-columns: repeat(8, 20fr); */
+  gap: 18px;
 }
 
 .movieCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-decoration: none;
   color: white;
-  transition: transform 0.2s;
+  background: #111;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.movieCard:hover {
+  transform: scale(1.03);
 }
 
 .movieCard img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .movieCard p {
-  font-size: 0.9rem;
+  margin-top: 8px;
+  font-size: 14px;
   text-align: center;
-  margin-top: 5px;
 }
 
-.movieCard:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+@media (max-width: 600px) {
+  .searchBar {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .searchBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .moviesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
 }

@@ -8,8 +8,9 @@ export default function Footer() {
       <div className={Styles.container}>
 
         <div className={Styles.logo}>
-          🎬 MovieBox
-          <p>Your #1 place for movies & trailers.</p>
+        <img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-movie-gamification-flaticons-lineal-color-flat-icons-2.png" alt="external-movie-gamification-flaticons-lineal-color-flat-icons-2"/>
+        Royalty
+          <p>Get the latest movies, trailers and updates for free.</p>
         </div>
 
         <div className={Styles.links}>

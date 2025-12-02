@@ -1,0 +1,48 @@
+.popularPage {
+  padding: 20px;
+  color: white;
+  margin-top: 30px;
+}
+
+.scrollContainer {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  gap: 25px;
+}
+
+
+.movieItem {
+  position: relative;
+  min-width: 200px;
+  height: 200px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.index {
+    position: relative;
+    margin-bottom: 20px;
+ color: white;
+ font-size: 10rem;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;    
+}
+
+/* POSTER IMAGE */
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}

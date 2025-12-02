@@ -10,28 +10,34 @@ export default function SearchBar() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const fetchMovies = async () => {
     if (!searchTerm) {
       setMovies([]);
       return;
     }
 
-    const fetchMovies = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-            searchTerm
-          )}`
-        );
-        const data = await res.json();
-        setMovies(data.results || []);
-      } catch (error) {
-        console.error("Search fetch error:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
+          searchTerm
+        )}`
+      );
+      const data = await res.json();
+      setMovies(data.results || []);
+    } catch (error) {
+      console.error("Search fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Auto search debounce
+  useEffect(() => {
+    if (!searchTerm) {
+      setMovies([]);
+      return;
+    }
 
     const debounce = setTimeout(() => {
       fetchMovies();
@@ -43,19 +49,24 @@ export default function SearchBar() {
   return (
     <div className={Styles.searchContainer}>
       <div className={Styles.searchBar}>
-        <img src="search.svg" alt="search icon" />
+       <img width="40" height="40" src="https://img.icons8.com/color/48/search--v1.png" alt="search--v1"/>
+
         <input
           type="text"
           placeholder="Search for movies..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+
+        <button onClick={fetchMovies} className={Styles.searchBtn}>
+          Search
+        </button>
       </div>
+
       <div className={Styles.searchResults}>
         {loading && <p>Loading...</p>}
-        {movies.length === 0 && searchTerm && !loading && (
-          <p>No movies found.</p>
-        )}
+        {movies.length === 0 && searchTerm && !loading && <p>No movies found.</p>}
+
         <div className={Styles.moviesGrid}>
           {movies.map((movie) => (
             <Link

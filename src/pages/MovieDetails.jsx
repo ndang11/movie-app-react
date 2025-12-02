@@ -1,8 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function MovieDetailPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
 
@@ -42,10 +44,21 @@ export default function MovieDetailPage() {
         <h1>{movie.title}</h1>
         <p>{movie.overview}</p>
 
-        <p><strong>Release Date:</strong> {movie.release_date}</p>
-        <p><strong>Rating:</strong> ⭐ {movie.vote_average}</p>
+        <p>
+          <strong>Release Date:</strong> {movie.release_date}
+        </p>
 
-        {/* CAST SECTION */}
+        <p>
+          <strong>Rating:</strong> ⭐ {movie.vote_average}
+        </p>
+
+        <button
+          className="favorite-btn"
+          onClick={() => navigate("/favorites")}
+        >
+          Add to Favorites
+        </button>
+
         <h2>Top Cast</h2>
         <div className="cast-grid">
           {cast.map((actor) => (
@@ -58,7 +71,9 @@ export default function MovieDetailPage() {
                 }
                 alt={actor.name}
               />
-              <p><strong>{actor.name}</strong></p>
+              <p>
+                <strong>{actor.name}</strong>
+              </p>
               <p>{actor.character}</p>
             </div>
           ))}

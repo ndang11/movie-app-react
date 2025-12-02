@@ -16,6 +16,9 @@
 .logo {
   font-size: 1.3rem;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  color: #e50914;
 }
 
 .logo p {
@@ -52,10 +55,6 @@
 .social .icons {
   display: flex;
   gap: 12px;
-}
-
-.social .icons img {
- 
 }
 
 .social .icons img:hover {
