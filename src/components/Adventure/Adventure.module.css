@@ -1,0 +1,89 @@
+.page {
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to bottom, #141414, #1a1a1a);
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #e5e5e5;
+}
+
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 15px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  min-width: 180px;
+  height: 270px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.indexContainer {
+  position: relative;
+  width: 180px;
+  height: 270px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.index {
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  font-size: 100px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.25);
+  line-height: 1;
+  z-index: 1;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.index:hover {
+  -webkit-text-stroke: 2px #e50914;
+  color: transparent;
+}
+
+.poster {
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.loading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 40px;
+  font-size: 1.2rem;
+}

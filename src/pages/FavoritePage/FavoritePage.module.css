@@ -1,0 +1,150 @@
+.page {
+  padding: 30px;
+  color: white;
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.empty {
+  color: #ccc;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.index {
+  position: absolute;
+  top: -8px;
+  left: -5px;
+  font-size: 50px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.07);
+  z-index: 1;
+}
+
+.posterWrapper {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.poster {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .poster {
+  transform: scale(1.05);
+}
+
+.movieTitle {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.removeBtn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #ff2e63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.removeBtn:hover {
+  background: #d72352;
+}
+
+.clearBtn {
+  padding: 10px 16px;
+  background: #ff2e63;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.clearBtn:hover {
+  background: #d72352;
+}
+
+.favoritePage {
+  padding: 30px;
+}
+
+.clearBtn {
+  padding: 10px 16px;
+  background: #ff2e63;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.clearBtn:hover {
+  background: #d72352;
+}
+
+.grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.card img {
+  width: 160px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .poster {
+    height: 200px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}

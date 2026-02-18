@@ -1,0 +1,43 @@
+.list {
+  display: flex;
+  gap: 2rem;
+  overflow: scroll;
+  padding: 20px 30px;
+}
+
+.movieItem {
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.imageWrapper {
+    
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.indexWrapper {
+  /* position: relative; */
+}
+
+.movieIndex {
+  /* position: absolute;
+  top: 10px;
+  left: 10px;
+
+  background: rgba(0, 0, 0, 0.75);
+  padding: 4px 10px;
+  border-radius: 6px;
+
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+
+  */
+  color: white;
+  font-size: 10rem;
+  font-weight: 700;
+
+}
