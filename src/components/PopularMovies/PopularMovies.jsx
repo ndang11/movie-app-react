@@ -25,31 +25,31 @@ export default function Popular() {
     fetchPopular();
   }, []);
 
-  if (loading)
-    return <h2 className={Styles.loading}>Loading popular movies…</h2>;
+  if (loading) return <h2 className={Styles.loading}>Loading Popular Movies...</h2>;
 
   return (
-    <div className={Styles.popularPage}>
-      <div className={Styles.scrollContainer}>
-        <div className={Styles.list}>
-          {movies.map((movie, index) => (
-            <Link
-              to={`/movie/${movie.id}`}
-              key={movie.id}
-              className={Styles.movieItem}
-            >
-              <div className={Styles.index}>{index + 1}</div>
+    <div className={Styles.container}>
+      <h1 className={Styles.title}>Popular Movies</h1>
+      <p className={Styles.subtitle}>Discover the most popular movies right now</p>
 
-            <div className={Styles.card}>
-                  <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                className={Styles.poster}
-              />
-            </div>
-            </Link>
-          ))}
-        </div>
+      <div className={Styles.grid}>
+        {movies.map((movie) => (
+          <Link key={movie.id} to={`/movie/${movie.id}`} className={Styles.card}>
+            <img
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  : "https://via.placeholder.com/500x750?text=No+Image"
+              }
+              alt={movie.title}
+            />
+            <h3>{movie.title}</h3>
+            <span>⭐ {movie.vote_average.toFixed(1)}</span>
+            <p className={Styles.date}>
+              Release: {movie.release_date}
+            </p>
+          </Link>
+        ))}
       </div>
     </div>
   );

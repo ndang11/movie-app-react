@@ -9,7 +9,12 @@ const NavBar = () => {
   return (
     <nav className={Styles.nav}>
       <div className={Styles.logo}>
-        <img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-movie-gamification-flaticons-lineal-color-flat-icons-2.png" alt="external-movie-gamification-flaticons-lineal-color-flat-icons-2"/>
+        <img
+          width="64"
+          height="64"
+          src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-movie-gamification-flaticons-lineal-color-flat-icons-2.png"
+          alt="external-movie-gamification-flaticons-lineal-color-flat-icons-2"
+        />
         Royalty
       </div>
 
@@ -25,21 +30,34 @@ const NavBar = () => {
       <div className={Styles.box}>
         <ul className={`${Styles.navLinks} ${open ? Styles.active : ""}`}>
           <li>
-            <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+            <Link to="/" onClick={() => setOpen(false)}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/popular" onClick={() => setOpen(false)}>Popular</Link>
+            <Link to="/popular" onClick={() => setOpen(false)}>
+              Popular
+            </Link>
           </li>
           <li>
-            <Link to="/top-rated" onClick={() => setOpen(false)}>Top Rated</Link>
+            <Link to="/top-rated" onClick={() => setOpen(false)}>
+              Top Rated
+            </Link>
           </li>
           <li>
-            <Link to="/upcoming" onClick={() => setOpen(false)}>Upcoming</Link>
+            <Link to="/upcoming" onClick={() => setOpen(false)}>
+              Upcoming
+            </Link>
+          </li>
+          <li>
+            <Link to="/favorites" onClick={() => setOpen(false)}>
+              Favorites
+            </Link>
           </li>
         </ul>
-          <div className={Styles.bar}>
-             <SearchBar />
-          </div>
+        <div className={Styles.bar}>
+          <SearchBar />
+        </div>
       </div>
     </nav>
   );

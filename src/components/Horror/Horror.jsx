@@ -41,15 +41,18 @@ export default function Horror() {
               key={movie.id}
               className={Styles.card}
             >
-              <img
-                src={
-                  movie.poster_path
-                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                    : "/no-image.jpg"
-                }
-                alt={movie.title}
-                className={Styles.poster}
-              />
+              <div className={Styles.indexContainer}>
+                <span className={Styles.index}>{index + 1}</span>
+                <img
+                  src={
+                    movie.poster_path
+                      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                      : "/no-image.jpg"
+                  }
+                  alt={movie.title}
+                  className={Styles.poster}
+                />
+              </div>
             </Link>
           ))}
         </div>
